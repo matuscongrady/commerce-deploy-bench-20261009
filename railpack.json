@@ -1,0 +1,1 @@
+{"$schema":"https://schema.railpack.com","deploy":{"inputs":["...",{"step":"build","include":["/app/apps/backend/.medusa/server"]}]}}
