@@ -6,4 +6,4 @@ Node 24.15.0 is pinned for platform parity.
 
 Benchmark adaptations: production Redis modules, server/worker environment configuration, revision endpoint and a product-created subscriber to verify the worker. No synthetic payload padding.
 
-`railpack.json` explicitly retains Medusa's generated production server directory, including its separate production dependency installation. Some automatic Node image plans otherwise omit that directory's `node_modules`. This uses Railpack's native configuration and keeps the same install/build/start commands; it adds no Dockerfile.
+`railpack.json` explicitly retains Medusa's generated production server directory, including its separate production dependency installation. Some automatic Node image plans otherwise omit that directory's `node_modules`. This uses Railpack's native configuration and installation defaults, then runs the application-specific `bash build.sh` command and production start command. It adds no Dockerfile.
