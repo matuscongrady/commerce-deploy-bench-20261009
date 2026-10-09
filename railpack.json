@@ -1,1 +1,20 @@
-{"$schema":"https://schema.railpack.com","deploy":{"inputs":["...",{"step":"build","include":["/app/apps/backend/.medusa/server"]}]}}
+{
+  "$schema": "https://schema.railpack.com",
+  "steps": {
+    "install": {
+      "commands": ["pnpm install --frozen-lockfile --prod=false --filter @dtc/backend... --ignore-scripts"],
+      "deployOutputs": []
+    },
+    "build": {
+      "commands": ["bash build.sh"],
+      "deployOutputs": []
+    }
+  },
+  "deploy": {
+    "startCommand": "cd apps/backend/.medusa/server && pnpm start",
+    "inputs": [
+      "...",
+      { "step": "build", "include": ["/app/apps/backend/.medusa/server"] }
+    ]
+  }
+}
