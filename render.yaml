@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: bmk-render-container-node-api
+    runtime: node
+    plan: starter
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
